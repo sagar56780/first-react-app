@@ -1,4 +1,5 @@
 //!===========props===========
+/*
 const ChildCompnent=(props)=>{
 
     return (
@@ -8,9 +9,26 @@ const ChildCompnent=(props)=>{
         <h1>Price{props.price}</h1>
         <h1>Discount{props.discount}</h1>
 
-        <hr /> 
+        <hr />    
              </>
         
     );
 }
 export default ChildCompnent;
+*/
+
+
+const ChildCompnent=(props)=>{
+
+    return (
+        <>
+        <h1>I am child component</h1>
+          {props.children}
+
+        <hr />    
+             </>
+        
+    );
+}
+export default ChildCompnent;
+

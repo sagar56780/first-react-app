@@ -26,6 +26,7 @@ class App extends React.Component{
 
 */
 //!============Props===============
+/*
 import ChildCompnent from "./ChildComponent";
 const App=()=>{    //sending props - props is addition property passing to a element like we pass values inside input tag in html
     return(
@@ -37,6 +38,26 @@ const App=()=>{    //sending props - props is addition property passing to a ele
          <ChildCompnent image="fithImage" discription="info5" price="600" discount="80%"/>  
 
          </>
+    );
+}
+export default App;
+
+*/
+//! =========Props Children==========
+
+import ChildCompnent from "./ChildComponent";
+const App=()=>{    //sending props - props is addition property passing to a element like we pass values inside input tag in html
+    return(
+        
+        <ChildCompnent>
+            <h1>I am first child</h1>
+            <h1>I am second child</h1>
+            <h1>I am thired child</h1>
+            <h1>I am fouth child</h1>
+
+        </ChildCompnent>
+        
+        
     );
 }
 export default App;
