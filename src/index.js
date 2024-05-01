@@ -1,17 +1,30 @@
+/*import React from "react";
+import ReactDom from 'react-dom/client';
+// console.log(React);
+// console.log(ReactDom);
+var root=ReactDom.createRoot(document.getElementById("root"));
+console.log(root);
+
+root.render(<div id="container"> this is a container </div>);
+console.log(root);
+*/
+/*
+//?case 2
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+createRoot(document.getElementById("root")).render(<h1>hello react developer</h1>)
+*/
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// import App  from "./App";
+// import { createRoot } from "react-dom/client";
+
+// createRoot(document.getElementById("root")).render(<App></App>)
+
+
+//?====class based components ========
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+
+createRoot(document.getElementById("root")).render(<App></App>) 
