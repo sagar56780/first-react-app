@@ -27,9 +27,9 @@ class App extends React.Component{
 */
 //!============Props===============
 import ChildCompnent from "./ChildComponent";
-const App=()=>{
+const App=()=>{     
     return(
-         <ChildCompnent/>
+         <ChildCompnent image="FirstImage" discription="info1" price="100" discount="90%"/>  // sending props 
 
     );
 }

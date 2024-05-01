@@ -1,12 +1,12 @@
 //!===========props===========
-const ChildCompnent=()=>{
+const ChildCompnent=(props)=>{
 
     return (
         <>
-        <h1>image:</h1>
-        <h1>Description</h1>
-        <h1>Price</h1>
-        <h1>Discount</h1>
+        <h1>image:{props.image}</h1>
+        <h1>Description:{props.discription}</h1>
+        <h1>Price{props.price}</h1>
+        <h1>Discount{props.discount}</h1>
         </>
     );
 }
