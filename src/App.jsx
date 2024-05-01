@@ -22,6 +22,15 @@ class App extends React.Component{
         </>
     };
 }
-export default App;
+
 
 */
+//!============Props===============
+import ChildCompnent from "./ChildComponent";
+const App=()=>{
+    return(
+         <ChildCompnent/>
+
+    );
+}
+export default App;
