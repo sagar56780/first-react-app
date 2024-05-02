@@ -1,7 +1,7 @@
 //!===========props===========
-/*
-const ChildCompnent=(props)=>{
 
+const ChildCompnent=(props)=>{
+ console.log(props);
     return (
         <>
         <h1>image:{props.image}</h1>
@@ -15,9 +15,9 @@ const ChildCompnent=(props)=>{
     );
 }
 export default ChildCompnent;
-*/
 
 
+/*
 const ChildCompnent=(props)=>{
 
     return (
@@ -31,4 +31,5 @@ const ChildCompnent=(props)=>{
     );
 }
 export default ChildCompnent;
+*/
 
