@@ -32,11 +32,11 @@ const App=()=>{    //sending props - props is addition property passing to a ele
    
     return(
         <>
-         <ChildCompnent image="FirstImage" discription="info1" price={100} discount={90} /> 
-         <ChildCompnent image="secondImage" discription="info2" price={500} discount={80}/>  
-         <ChildCompnent image="thirdImage" discription="info3" price={300} discount={39}/> 
-         <ChildCompnent image="fourthImage" discription="info4" price={1100} discount={50}/> 
-         <ChildCompnent image="fithImage" discription="info5" price={3000} discount={90}/>  
+         <ChildCompnent image="FirstImage" discription="info1" price={100} discount={90} isavailable={true} /> 
+         <ChildCompnent image="secondImage" discription="info2" price={500} discount={80} isavailable={false}/>  
+         <ChildCompnent image="thirdImage" discription="info3" price={300} discount={39} isavailable={true}/> 
+         <ChildCompnent image="fourthImage" discription="info4" price={1100} discount={50} isavailable={false}/> 
+         <ChildCompnent image="fithImage" discription="info5" price={3000} discount={90} isavailable={true}/>  
 
          </>
     );
