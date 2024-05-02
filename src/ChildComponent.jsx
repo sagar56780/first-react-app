@@ -8,7 +8,7 @@ const ChildCompnent=(props)=>{
         <h1>Description:{props.discription}</h1>
         <h1>Price{props.price}</h1>
         <h1>Discount{props.discount}</h1>
-        <h1>IsAvailable:{props.isavailable}</h1>
+        <h1>IsAvailable:{props.isavailable===true?"YES":"NO"}</h1>
         
         <hr />
              </>
