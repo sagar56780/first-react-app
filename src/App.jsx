@@ -26,17 +26,18 @@ class App extends React.Component{
 
 */
 //!============Props===============
-
+/*
 import ChildCompnent from "./ChildComponent";
 const App=()=>{    //sending props - props is addition property passing to a element like we pass values inside input tag in html
    
     return(
         <>
-         <ChildCompnent image="FirstImage" discription="info1" price={100} discount={90} isavailable={true} /> 
-         <ChildCompnent image="secondImage" discription="info2" price={500} discount={80} isavailable={false}/>  
-         <ChildCompnent image="thirdImage" discription="info3" price={300} discount={39} isavailable={true}/> 
-         <ChildCompnent image="fourthImage" discription="info4" price={1100} discount={50} isavailable={false}/> 
-         <ChildCompnent image="fithImage" discription="info5" price={3000} discount={90} isavailable={true}/>  
+         <ChildCompnent image="FirstImage" discription="info1" price={100} discount={90} isavailable={true} totalOrder={30} rating={4.6}/> 
+         <ChildCompnent image="secondImage" discription="info2" price={500} discount={80} isavailable={false} totalOrder={null} rating={4.2}/>  
+         <ChildCompnent image="thirdImage" discription="info3" price={300} discount={39} isavailable={true} totalOrder={50} rating={undefined}/> 
+         <ChildCompnent image="fourthImage" discription="info4" price={1100} discount={50} isavailable={false} totalOrder={23} rating={2.3}/> 
+         <ChildCompnent image="fithImage" discription="info5" price={3000} discount={90} isavailable={true} totalOrder={null} rating={undefined}/>  
+         
 
          </>
     );
@@ -65,4 +66,22 @@ const App=()=>{    //sending props - props is addition property passing to a ele
 export default App;
 
 */
+//!============Props- Destructuring===============
+
+import ChildCompnent from "./ChildComponent";
+const App=()=>{    //sending props - props is addition property passing to a element like we pass values inside input tag in html
+   
+    return(
+        <>
+         <ChildCompnent image="FirstImage" discription="info1" price={100} discount={90} isavailable={true} totalOrder={30} rating={4.6}/> 
+         <ChildCompnent image="secondImage" discription="info2" price={500} discount={80} isavailable={false} totalOrder={null} rating={4.2}/>  
+         <ChildCompnent image="thirdImage" discription="info3" price={300} discount={39} isavailable={true} totalOrder={50} rating={undefined}/> 
+         <ChildCompnent image="fourthImage" discription="info4" price={1100} discount={50} isavailable={false} totalOrder={23} rating={2.3}/> 
+         <ChildCompnent image="fithImage" discription="info5" price={3000} discount={90} isavailable={true} totalOrder={null} rating={undefined}/>  
+         
+
+         </>
+    );
+}
+export default App;
 

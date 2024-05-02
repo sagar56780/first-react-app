@@ -1,5 +1,5 @@
 //!===========props===========
-
+/*
 const ChildCompnent=(props)=>{
  console.log(props);
     return (
@@ -9,6 +9,8 @@ const ChildCompnent=(props)=>{
         <h1>Price{props.price}</h1>
         <h1>Discount{props.discount}</h1>
         <h1>IsAvailable:{props.isavailable===true?"YES":"NO"}</h1>
+        <h1>Total Order:{props.totalOrder===null?"NA":props.totalOrder}</h1>
+        <h1>Rating:{props.rating===undefined?"NA":props.rating}</h1>
         
         <hr />
              </>
@@ -16,7 +18,7 @@ const ChildCompnent=(props)=>{
     );
 }
 export default ChildCompnent;
-
+*/
 
 /*
 const ChildCompnent=(props)=>{
@@ -33,4 +35,25 @@ const ChildCompnent=(props)=>{
 }
 export default ChildCompnent;
 */
+//!===========props Distructuring===========
 
+const ChildCompnent=(props)=>{
+    console.log(props);
+    let{image,discription,price,discount,isavailable,totalOrder,rating}=props;
+       return (
+           <>
+           <h1>image:{image}</h1>
+           <h1>Description:{discription}</h1>
+           <h1>Price{price}</h1>
+           <h1>Discount{discount}</h1>
+           <h1>IsAvailable:{isavailable===true?"YES":"NO"}</h1>
+           <h1>Total Order:{totalOrder===null?"NA":props.totalOrder}</h1>
+           <h1>Rating:{rating===undefined?"NA":props.rating}</h1>
+           
+           <hr />
+                </>
+           
+       );
+   }
+   export default ChildCompnent;
+   
