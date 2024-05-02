@@ -67,7 +67,7 @@ export default App;
 
 */
 //!============Props- Destructuring===============
-
+/*
 import ChildCompnent from "./ChildComponent";
 const App=()=>{    //sending props - props is addition property passing to a element like we pass values inside input tag in html
    
@@ -84,4 +84,20 @@ const App=()=>{    //sending props - props is addition property passing to a ele
     );
 }
 export default App;
+*/
 
+import ChildCompnent from "./ChildComponent";
+const App=()=>{    //sending props - props is addition property passing to a element like we pass values inside input tag in html
+   console.log(ChildCompnent);
+    return(
+        <>
+         <ChildCompnent name="shivam Chauhan" age={25} course="node js" /> 
+         <ChildCompnent name="Daksh" course="node js" gender="male" /> 
+         <ChildCompnent name="vinay" age={25}  gender="male" /> 
+
+    
+
+         </>
+    );
+}
+export default App;

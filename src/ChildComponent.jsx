@@ -35,6 +35,7 @@ const ChildCompnent=(props)=>{
 }
 export default ChildCompnent;
 */
+/*
 //!===========props Distructuring===========
 
 const ChildCompnent=(props)=>{
@@ -56,4 +57,24 @@ const ChildCompnent=(props)=>{
        );
    }
    export default ChildCompnent;
+*/
+
+//!========Default props=========
+
+const ChildCompnent=(props)=>{
+    let{name="no name",age=18,course="JFS",gender="others"}=props;//setting default value for missing v
+    return(
+    <>
+    <h1>Name:{name}</h1>
+    <h1>Age:{age}</h1>
+    <h1>Course: {course}</h1>
+    <h1>Gender:{gender}</h1>
+    <hr />
+    </>
+    );
+};
+export default ChildCompnent;
+
+
+   
    
