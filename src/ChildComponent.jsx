@@ -60,7 +60,7 @@ const ChildCompnent=(props)=>{
 */
 
 //!========Default props=========
-
+/*
 const ChildCompnent=(props)=>{
     let{name="no name",age=18,course="JFS",gender="others"}=props;//setting default value for missing v
     return(
@@ -74,7 +74,23 @@ const ChildCompnent=(props)=>{
     );
 };
 export default ChildCompnent;
+*/
 
+//!=========props Drilling===========
+import GrandChildComponent from "./GrandChildComponent";
+const ChildCompnent=(props)=>{
+   console.log("i am child component");
+   console.log(props);
+    return(
+    <>
+    <h1> data ={props.data}</h1>
+    <h1>I am child component</h1>
+    <GrandChildComponent childData={props.data}/>
+    
 
-   
+    <hr />
+    </>
+    );
+};
+export default ChildCompnent;
    
