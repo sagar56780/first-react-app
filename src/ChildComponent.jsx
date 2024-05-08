@@ -77,6 +77,7 @@ export default ChildCompnent;
 */
 
 //!=========props Drilling===========
+/*
 import GrandChildComponent from "./GrandChildComponent";
 const ChildCompnent=(props)=>{
    console.log("i am child component");
@@ -93,4 +94,25 @@ const ChildCompnent=(props)=>{
     );
 };
 export default ChildCompnent;
+*/
+
+//!========props type=========
+// import PropType from "prop-types"
+// const ChildCompnent=(props)=>{
    
+    
+//     return(
+//         <>
+        
+        
+        
+//         </>
+
+//     )
+//     ChildCompnent.prototype={ 
+
+
+        
+//     }
+   
+// }
