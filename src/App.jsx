@@ -292,3 +292,33 @@ export default App;
 */
 
 //!==============task 3=================
+ import React,{useState} from "react"
+const App=()=>{
+    let[obj,changeObj]=useState({
+        name:"shubam",
+        age:"34",
+        gender:"male"
+
+    })
+    var changevalue=()=>{
+        return changeObj({
+            name:"sagar",
+        age:"24",
+        gender:"male"
+
+        })
+    }
+    return(
+        <>
+        <h1>Name:{obj.name}</h1>
+        <h1>Age: {obj.age}</h1>
+        <h1>Gender:{obj.gender}</h1>
+        <button onClick={changevalue}> Change values</button>
+        
+
+
+        </>
+        )
+
+}
+export default App;
