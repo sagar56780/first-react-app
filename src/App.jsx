@@ -290,7 +290,7 @@ const App=()=>
 export default App;
 
 */
-
+/*
 //!==============task 3=================
  import React,{useState} from "react"
 const App=()=>{
@@ -320,5 +320,31 @@ const App=()=>{
         </>
         )
 
+}
+export default App;
+*/
+
+//!============Context API==========//
+
+/* 
+step 1. create Context
+step 2. provider
+step 3. consumer
+*/
+
+import React,{createContext} from "react";
+import ChildCompnentA from "./ChildComponentA";
+
+
+export let MyContext=createContext();
+
+
+const App=()=>{
+
+    return<>
+    <MyContext.Provider value="React-js" >
+            <ChildCompnentA></ChildCompnentA>
+    </MyContext.Provider>
+    </>
 }
 export default App;
