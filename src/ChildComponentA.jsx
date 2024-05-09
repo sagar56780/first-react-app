@@ -1,3 +1,4 @@
+/*
 import { MyContext } from "./App";
 
 
@@ -27,3 +28,4 @@ const ChildCompnentA=()=>{
 
 }
 export default ChildCompnentA;
+*/

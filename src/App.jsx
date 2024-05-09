@@ -330,7 +330,7 @@ export default App;
 step 1. create Context
 step 2. provider
 step 3. consumer
-*/
+
 
 import React,{createContext} from "react";
 import ChildCompnentA from "./ChildComponentA";
@@ -352,3 +352,4 @@ const App=()=>{
     </>
 }
 export default App;
+*/
