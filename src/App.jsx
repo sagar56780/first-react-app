@@ -337,12 +337,16 @@ import ChildCompnentA from "./ChildComponentA";
 
 
 export let MyContext=createContext();
-
+let student={
+     name:"sumit",
+     age:34,
+     skills:["web","java","jdbc"]
+}
 
 const App=()=>{
 
     return<>
-    <MyContext.Provider value="React-js" >
+    <MyContext.Provider value={student} >
             <ChildCompnentA></ChildCompnentA>
     </MyContext.Provider>
     </>
