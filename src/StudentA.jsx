@@ -4,6 +4,9 @@ const StudentA=()=>{
     return(
         <>
     <QspiderContext.Consumer>
+
+
+      
       {(val)=>{
             return<> 
             <a href={val} target="blank" ><h1>Qspiders Student A</h1></a>

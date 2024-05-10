@@ -10,6 +10,7 @@ const Qspider=()=>{
     return<>
         <QspiderContext.Provider value="https://student.qspiders.com/">
             <StudentA/>
+            
             <StudentB/>
 
             
