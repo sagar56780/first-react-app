@@ -2,11 +2,14 @@
 
 
 const HOC=(CompnentName)=>{
-   return ()=>{
+ 
+ 
+   return (props)=>{  //props which are passed by App componenet
     return <>
 
-
-      <CompnentName name="sagar "/>
+    
+        
+      <CompnentName name="sagar" age={props.age}/>
     
 
 

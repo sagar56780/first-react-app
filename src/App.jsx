@@ -366,8 +366,8 @@ const App=()=>{
     return <>
        
         
-        <ChildComponentA/>
-        <ChildComponentB/>
+        <ChildComponentA  age ={34}/>
+        <ChildComponentB age={45}/>
    
 
     </>
