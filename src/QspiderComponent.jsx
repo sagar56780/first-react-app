@@ -1,4 +1,4 @@
-
+/*
 import React,{createContext} from "react"
 import StudentA from "./StudentA";
 import StudentB from "./StudentB";
@@ -10,7 +10,7 @@ const Qspider=()=>{
     return<>
         <QspiderContext.Provider value="https://student.qspiders.com/">
             <StudentA/>
-            
+
             <StudentB/>
 
             
@@ -24,3 +24,4 @@ const Qspider=()=>{
     </>
 }
 export default Qspider;
+*/

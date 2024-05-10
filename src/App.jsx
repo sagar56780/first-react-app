@@ -353,3 +353,23 @@ const App=()=>{
 }
 export default App;
 */
+//!===============Higer Order Component========
+
+
+import ChildComponentA from "./ChildComponentA";
+import ChildComponentB from "./ChildComponentB";
+
+
+
+
+const App=()=>{
+    return <>
+       
+        
+        <ChildComponentA/>
+        <ChildComponentB/>
+   
+
+    </>
+}
+export default App;

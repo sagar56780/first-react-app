@@ -29,3 +29,17 @@ const ChildCompnentA=()=>{
 }
 export default ChildCompnentA;
 */
+//!==============Higer Ordere Component
+import HOC from "./HOC";
+
+const ChildCompnentA=(props)=>{
+
+    return <>
+      <h1> Name : {props.name} </h1> 
+      <h1>This is child Component A</h1>
+    
+    </>
+
+
+}
+export default HOC(ChildCompnentA);

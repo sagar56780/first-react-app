@@ -1,8 +1,9 @@
+/*
 import { useContext } from "react";
 import { QspiderContext } from "./QspiderComponent";
 
 const StudentA1=()=>{
-let val=useContext(QspiderContext)
+let val=useContext(QspiderContext) //instead of <.consumer> we use this
     return (<>
 
         
@@ -17,3 +18,4 @@ let val=useContext(QspiderContext)
     </>)
 }
 export  default StudentA1;
+*/
