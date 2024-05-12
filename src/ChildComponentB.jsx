@@ -1,3 +1,4 @@
+/*
 import HOC from "./HOC";
 
 const ChildCompnentB=(props)=>{
@@ -13,3 +14,4 @@ console.log(props);
 
 }
 export default HOC(ChildCompnentB);
+*/

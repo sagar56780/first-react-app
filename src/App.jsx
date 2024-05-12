@@ -1,5 +1,7 @@
 // import React from "react";
 
+// import { useState } from "react"
+
 
 
 
@@ -353,6 +355,7 @@ const App=()=>{
 }
 export default App;
 */
+/*
 //!===============Higer Order Component========
 
 
@@ -373,3 +376,54 @@ const App=()=>{
     </>
 }
 export default App;
+*/
+//!============conditional Render ===========
+//? Example 1 by using  if else 
+/*
+import { useState } from "react";
+
+const App=()=>{
+    let[condition,changeCondition]=useState(true);
+    let handleCondition=()=>{
+        changeCondition(!condition);
+    }
+    if(condition)
+        {
+            return<>
+                    <h1>HTML</h1>
+                    <button onClick={handleCondition}>Change Condition</button>
+            </>
+            
+            
+        }
+        else{
+            return<>
+            <h1>Hyper Text Markup Language</h1>
+            <button onClick={handleCondition}>Change Condition</button>
+    </>
+
+        }
+
+}
+export default App;
+*/
+//?Exapmle 2 using ternery Operater
+import { useState } from "react";
+
+const App=()=>{
+    let[condition,changeCondition]=useState(true);
+    let handleCondition=()=>{
+        changeCondition(!condition);
+    }
+     
+    return <>
+            <h1>
+                {condition?"HTML":"Hyper Text Markup Language"}
+                <button onClick={handleCondition}></button>
+            </h1>
+    </>
+   
+
+}
+export default App;
+

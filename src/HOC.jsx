@@ -1,4 +1,4 @@
-
+/*
 
 
 const HOC=(CompnentName)=>{
@@ -19,3 +19,4 @@ const HOC=(CompnentName)=>{
 
 }
 export default HOC;
+*/
