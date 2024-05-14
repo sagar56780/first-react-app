@@ -462,6 +462,7 @@ const App=()=>{
 }
 export default App;
 */
+/*
 //!============task Calculator using useRef===========
 
 import { useRef } from "react";
@@ -521,4 +522,74 @@ const App=()=>{
     ) 
 }
 
+export default App;
+
+*/
+
+//!=============controlled form ==============
+import { useState } from "react";
+const App=()=>{
+    let[name,setName]=useState("");
+    let[email,setEmail]=useState("");
+    let[password,setPassword]=useState("");
+    
+
+    let handleName=(e,f)=>{
+        
+        console.log(e.target.value);
+
+        setName(e.target.value);
+    
+        
+    }
+    
+    let handleEmail=(e)=>{
+        console.log(e);
+        setEmail(e.target.value);
+    }
+    
+    let handlePassword=(e)=>{
+      console.log(e);
+      setPassword(e.target.password);
+        
+    }
+
+    let handleSubmit=(e)=>{
+        e.preventDefault();
+    }
+    console.log({
+        userName: name,
+        userEmail:email,
+        userPassword:password
+    });
+    return(<>
+    <form onSubmit={handleSubmit}>
+        <div>
+            <label htmlFor="">Name</label>
+            <input type="text" value={name} onChange={handleName}></input>
+        </div>
+
+        <div>
+            <label htmlFor="">Email</label>
+            <input type="text" value={email} onChange={handleEmail}></input>
+        </div>
+
+        <div>
+            <label htmlFor="">Password</label>
+            <input type="text" value={password} onChange={handlePassword}></input>
+        </div>
+
+         <button type="submit" >Submit</button>
+        
+    </form>
+    </>)
+    
+    
+    
+    
+
+
+
+
+}
 export default App;
