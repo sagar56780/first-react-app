@@ -1,3 +1,4 @@
+/*
 import { QspiderContext } from "./QspiderComponent";
 
 const StudentB=()=>{
@@ -13,3 +14,4 @@ const StudentB=()=>{
     )
 }
 export default StudentB;
+*/

@@ -25,6 +25,7 @@ createRoot(document.getElementById("root")).render(<h1>hello react developer</h1
 //?====class based components ========
 import React from "react";
 import { createRoot } from "react-dom/client";
+import "./index.css"
 import App from "./App";
 // import Qspider from "./QspiderComponent";
 

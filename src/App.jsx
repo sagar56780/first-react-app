@@ -1,6 +1,11 @@
 // import React from "react";
 
 
+// import { useRef } from "react";
+
+// import { useState } from "react"
+
+
 
 
 
@@ -353,6 +358,7 @@ const App=()=>{
 }
 export default App;
 */
+/*
 //!===============Higer Order Component========
 /*
 
@@ -374,3 +380,145 @@ const App=()=>{
 }
 export default App;
 */
+//!============conditional Render ===========
+//? Example 1 by using  if else 
+/*
+import { useState } from "react";
+
+const App=()=>{
+    let[condition,changeCondition]=useState(true);
+    let handleCondition=()=>{
+        changeCondition(!condition);
+    }
+    if(condition)
+        {
+            return<>
+                    <h1>HTML</h1>
+                    <button onClick={handleCondition}>Change Condition</button>
+            </>
+            
+            
+        }
+        else{
+            return<>
+            <h1>Hyper Text Markup Language</h1>
+            <button onClick={handleCondition}>Change Condition</button>
+    </>
+
+        }
+
+}
+export default App;
+*/
+/*
+//?Exapmle 2 using ternery Operater
+import { useState } from "react";
+
+const App=()=>{
+    let[condition,changeCondition]=useState(true);
+    let handleCondition=()=>{
+        changeCondition(!condition);
+    }
+     
+    return <>
+            <h1>
+                {condition?"HTML":"Hyper Text Markup Language"}
+                <button onClick={handleCondition}></button>
+            </h1>
+    </>
+   
+
+}
+export default App;
+*/
+//!===========useRef===========
+/*
+
+const App=()=>{
+    let nameRef=useRef();
+    let emailRef=useRef();
+    console.log(nameRef.current);
+    console.log(emailRef.current);
+
+    let handleForm=(e)=>{
+        e.preventDefault();
+        console.log(nameRef.current.value,emailRef.current.value);
+        
+    }
+
+    
+    return<>
+    <form onSubmit={handleForm} >
+        <label htmlFor="name">Name : </label>
+        <input type="text" id="name" ref={nameRef} /><br></br><br /><br />
+        <label htmlFor="email" >Email: </label>
+        <input type="email"id="email" ref={emailRef} /><br /><br />
+          <button type="Submit">Submit</button>
+        
+ 
+
+   </form>
+    </>
+}
+export default App;
+*/
+//!============task Calculator using useRef===========
+
+import { useRef } from "react";
+
+const App=()=>{
+    
+    let input1Ref=useRef();
+    let input2Ref=useRef();
+    let plusRef=useRef();
+    let minusRef=useRef();
+    let divideRef=useRef();
+    let mulRef=useRef();
+        
+        
+
+
+    let result=(e)=>{
+        e.preventDefault();
+         let a=input1Ref.current.value;
+         let b=input2Ref.current.value;
+      
+
+         console.log(parseInt(a)+parseInt(b));
+         
+      
+        
+
+       
+    }
+
+    return(
+    <>
+
+      
+        <form action="" onSubmit={result}>
+            <label htmlFor="display">Result</label>
+        <input type="display" />    <br /><br />
+        <div className="calculator">
+                <label htmlFor="input1">Input 2</label><br /><br />
+                 <input type="text" ref={input1Ref} id="input1" /> <br /><br />
+                 <label htmlFor="input2">Input 1</label><br /><br />
+                 <input type="text" ref={input2Ref} id="input2" />
+            
+        </div>
+        <div>   <button ref={plusRef}>+</button>
+                <button ref={minusRef}>-</button>
+                <button ref={divideRef}>/</button>
+                <button ref={mulRef}>X</button><br /> <br />
+                <button type="submit">=</button>
+        </div>
+        </form>
+      
+
+    
+    
+    </>
+    ) 
+}
+
+export default App;
