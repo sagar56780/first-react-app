@@ -1,5 +1,8 @@
 // import React from "react";
 
+const { computeHeadingLevel } = require("@testing-library/react");
+const { useState } = require("react")
+
 
 // import { useRef } from "react";
 
@@ -463,7 +466,7 @@ const App=()=>{
 export default App;
 */
 //!============task Calculator using useRef===========
-
+/*
 import { useRef } from "react";
 
 const App=()=>{
@@ -521,4 +524,71 @@ const App=()=>{
     ) 
 }
 
+export default App;
+*/
+//!=================Controlled Forms=================
+
+
+const App=()=>{
+
+
+    let[name,setName]=useState("");
+    let[email,setEmail]=useState("");
+
+    let[password,setPassword]=useState("");
+
+    let handleName=(e)=>{
+
+
+        setName(e.target.value);
+    }
+    let handleEmail=(e)=>{
+
+
+        setEmail(e.target.value);
+    }
+    let handlePassword=(e)=>{
+
+
+        setPassword(e.target.value);
+    }
+
+    let handleSubmit=(e)=>{
+        e.preventDefault();
+
+        console.log(
+            {
+                userName: name,
+                userEmail:email,
+                userPassword:password
+            }
+        );
+    }
+
+    return(<>
+        <form action="" onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="">Name:</label>
+                <input type="text" value={name} onChange={handleName}></input>
+            </div>
+            <div>
+                <label htmlFor="">Email:</label>
+                <input type="text" value={email} onChange={handleEmail}></input>
+            </div>
+            <div>
+                <label htmlFor="">Password:</label>
+                <input type="text" value={password} onChange={handlePassword}></input>
+            </div>
+
+            <button>Submit</button>
+
+
+        </form>
+        
+    
+    </>)
+
+
+
+}
 export default App;
