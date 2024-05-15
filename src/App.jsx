@@ -527,7 +527,7 @@ const App=()=>{
 export default App;
 */
 //!=================Controlled Forms=================
-
+/*
 
 const App=()=>{
 
@@ -592,3 +592,51 @@ const App=()=>{
 
 }
 export default App;
+*/
+
+//? Example 2
+
+const App=()=>{
+
+    let[formData,setFromData]=useState({
+        name:"",
+        girlFriendname:"",
+        email:"",
+        password:""
+    });
+
+    let{name,girlFriendname,email,password}=formData;
+    let handleChange=(e)=>{
+        let{name,value}=e.target;
+
+        setFromData({
+            ...formData,[name]:value
+        });
+        console.log(formData);
+    }
+    return(<>
+
+        <form action="">
+            <div>
+                <label htmlFor="">Name</label>
+                <input type="text" name="name" value={name} onChange={handleChange} />
+            </div>
+            <div>
+                <label htmlFor="">GirlFriendName</label>
+                <input type="text" name="girlFriendname" value={girlFriendname} onChange={handleChange} />
+            </div>
+            <div>
+                <label htmlFor="">Email</label>
+                <input type="text" name="email" value={email} onChange={handleChange} />
+            </div>
+            <div>
+                <label htmlFor="">Password</label>
+                <input type="text" name="password" value={password} onChange={handleChange} />
+            </div>
+
+            <button>Submit</button>
+        </form>
+    </>)
+}
+export default App;
+
