@@ -354,7 +354,7 @@ const App=()=>{
 export default App;
 */
 //!===============Higer Order Component========
-
+/*
 
 import ChildComponentA from "./ChildComponentA";
 import ChildComponentB from "./ChildComponentB";
@@ -373,3 +373,4 @@ const App=()=>{
     </>
 }
 export default App;
+*/
