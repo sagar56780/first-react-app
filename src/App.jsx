@@ -1,5 +1,8 @@
 // import React from "react";
 
+const { computeHeadingLevel } = require("@testing-library/react");
+const { useState } = require("react")
+
 
 // import { useRef } from "react";
 
@@ -360,7 +363,7 @@ export default App;
 */
 /*
 //!===============Higer Order Component========
-
+/*
 
 import ChildComponentA from "./ChildComponentA";
 import ChildComponentB from "./ChildComponentB";
@@ -464,7 +467,7 @@ export default App;
 */
 /*
 //!============task Calculator using useRef===========
-
+/*
 import { useRef } from "react";
 
 const App=()=>{
@@ -523,73 +526,118 @@ const App=()=>{
 }
 
 export default App;
-
 */
+//!=================Controlled Forms=================
+/*
 
-//!=============controlled form ==============
-import { useState } from "react";
 const App=()=>{
+
+
     let[name,setName]=useState("");
     let[email,setEmail]=useState("");
-    let[password,setPassword]=useState("");
-    
 
-    let handleName=(e,f)=>{
-        
-        console.log(e.target.value);
+    let[password,setPassword]=useState("");
+
+    let handleName=(e)=>{
+
 
         setName(e.target.value);
-    
-        
     }
-    
     let handleEmail=(e)=>{
-        console.log(e);
+
+
         setEmail(e.target.value);
     }
-    
     let handlePassword=(e)=>{
-      console.log(e);
-      setPassword(e.target.password);
-        
+
+
+        setPassword(e.target.value);
     }
 
     let handleSubmit=(e)=>{
         e.preventDefault();
+
+        console.log(
+            {
+                userName: name,
+                userEmail:email,
+                userPassword:password
+            }
+        );
     }
-    console.log({
-        userName: name,
-        userEmail:email,
-        userPassword:password
-    });
+
     return(<>
-    <form onSubmit={handleSubmit}>
-        <div>
-            <label htmlFor="">Name</label>
-            <input type="text" value={name} onChange={handleName}></input>
-        </div>
+        <form action="" onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="">Name:</label>
+                <input type="text" value={name} onChange={handleName}></input>
+            </div>
+            <div>
+                <label htmlFor="">Email:</label>
+                <input type="text" value={email} onChange={handleEmail}></input>
+            </div>
+            <div>
+                <label htmlFor="">Password:</label>
+                <input type="text" value={password} onChange={handlePassword}></input>
+            </div>
 
-        <div>
-            <label htmlFor="">Email</label>
-            <input type="text" value={email} onChange={handleEmail}></input>
-        </div>
+            <button>Submit</button>
 
-        <div>
-            <label htmlFor="">Password</label>
-            <input type="text" value={password} onChange={handlePassword}></input>
-        </div>
 
-         <button type="submit" >Submit</button>
+        </form>
         
-    </form>
+    
     </>)
-    
-    
-    
-    
-
 
 
 
 }
 export default App;
+*/
+
+//? Example 2
+
+const App=()=>{
+
+    let[formData,setFromData]=useState({
+        name:"",
+        girlFriendname:"",
+        email:"",
+        password:""
+    });
+
+    let{name,girlFriendname,email,password}=formData;
+    let handleChange=(e)=>{
+        let{name,value}=e.target;
+
+        setFromData({
+            ...formData,[name]:value
+        });
+        console.log(formData);
+    }
+    return(<>
+
+        <form action="">
+            <div>
+                <label htmlFor="">Name</label>
+                <input type="text" name="name" value={name} onChange={handleChange} />
+            </div>
+            <div>
+                <label htmlFor="">GirlFriendName</label>
+                <input type="text" name="girlFriendname" value={girlFriendname} onChange={handleChange} />
+            </div>
+            <div>
+                <label htmlFor="">Email</label>
+                <input type="text" name="email" value={email} onChange={handleChange} />
+            </div>
+            <div>
+                <label htmlFor="">Password</label>
+                <input type="text" name="password" value={password} onChange={handleChange} />
+            </div>
+
+            <button>Submit</button>
+        </form>
+    </>)
+}
+export default App;
+
