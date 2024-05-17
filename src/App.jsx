@@ -1,7 +1,9 @@
 // import React from "react";
 
-const { computeHeadingLevel } = require("@testing-library/react");
-const { useState } = require("react")
+import { computeHeadingLevel } from "@testing-library/react";
+
+
+
 
 
 // import { useRef } from "react";
@@ -596,6 +598,7 @@ export default App;
 */
 
 //? Example 2
+/*
 
 const App=()=>{
 
@@ -641,3 +644,100 @@ const App=()=>{
 }
 export default App;
 
+*/
+//!================= life Cycle Methods================
+//? ===========class based Component=======
+/*
+import React,{Component} from "react";
+class App extends Component{
+    state={counter:0};
+    render(){
+        return(
+            <>
+            <h1> I am class based Component</h1>
+            <h1>{this.state.counter}</h1>
+            <button onClick={()=>{
+                this.setState({counter:this.state.counter+1})
+            }}> Increment</button>
+            <button onClick={()=>{
+                this.setState({counter:0})
+            }}> reset</button>
+            <button onClick={()=>{
+                this.setState({counter:this.state.counter+1})
+            }}> Decreament</button>
+            
+            
+            
+            </>
+        )
+    }
+}
+export default App;
+*/
+//! ============Mounting phase ========
+/*
+ It is a process of creating an instance of component and rendering into the dom is called Mounting Phase.
+ Mounting phase method are:
+        ? 1. constructor():
+            This is first method to run in the mounting phase.
+            It is the best place to do all the intializations.
+            This method will execute only once befoe the instance rendered.
+            Do not make any side effects. Ex: Http requests.
+
+        ? 2. getDrivedStateFromProps():
+            It will run just before the render() method. 
+            It will receive the props and states as parameters.
+            It will return a new state.
+            It must return an Object/null
+            It must be static. It will get the proops and states which was belongs to current component . and cannot be accessed by their instances.
+            Do not make any side effects. Ex: Http requests.
+        ? 3. render():
+            It will run on each update.
+            It is the only mandatory method in CBC.
+            Do not make any side effects. Ex: HTTP requests 
+        ? 4. componentDidMount():
+            It will run after the render() method.
+            It will run only once.
+            So, It is the best place to make api requests/ side effects.
+ */
+const { Component } = require("react");
+
+class App extends Component{
+
+    constructor(props){
+        console.log(props);
+        console.log("I am constructor() method");
+        super(props);
+        this.state={counter:0};
+    }
+ 
+   static  getDerivedStateFromProps(props,prevState){
+    console.log("I am in getDerived state");
+    return null
+
+    }
+
+    componentDidMount(){
+        console.log("I am componentDidMount()");
+    }
+
+    render(){
+        console.log("In render method()");
+        return(<>
+         <h1>
+            I am in class based component
+         </h1>
+         <h1>{this.state.counter}</h1>
+         <button onClick={()=>{
+            this.setState({counter:this.state.counter+1})
+         }}></button>
+
+            
+        </>)
+
+
+
+    }
+
+}
+export default App;
