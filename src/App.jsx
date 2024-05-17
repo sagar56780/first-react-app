@@ -1,6 +1,6 @@
 // import React from "react";
 
-import { computeHeadingLevel } from "@testing-library/react";
+
 
 
 
@@ -700,6 +700,8 @@ export default App;
             It will run only once.
             So, It is the best place to make api requests/ side effects.
  */
+/*
+
 const { Component } = require("react");
 
 class App extends Component{
@@ -717,8 +719,92 @@ class App extends Component{
 
     }
 
+    async componentDidMount(){
+      
+        let res=await fetch("https://fakestoreapi.com/products/");
+        let data=await res.json();
+        console.log(data);
+        console.log("I am componentDidMount()");
+    }
+
+    render(){
+        console.log("In render method()");
+        return(<>
+         <h1>
+            I am in class based component
+         </h1>
+         <h1>{this.stat
+            e.counter}</h1>
+         <button onClick={()=>{
+            this.setState({counter:this.state.counter+1})
+         }}></button>
+
+            
+        </>)
+
+
+
+    }
+
+}
+export default App;
+*/
+//!=========Updating phase =========
+
+/*
+  ? 1.  getDrivedStateFromProps():
+            It will run just before the render() method. 
+            It will receive the props and states as parameters.
+            It will return a new state.
+            It must return an Object/null
+            It must be static. It will get the proops and states which was belongs to current component . and cannot be accessed by their instances.
+            Do not make any side effects. Ex: Http requests.
+  ? 2.  shouldComponentUpdate():
+            This method will work just before the render() mehod.
+            Based on shouldComponentUpdate() output, React will decide to render or not.
+            It accepts  w parameters - prevProps, prevState.
+            It must return a boolean value.
+            By default it returns True.
+
+  ? 3.  render():
+            It is just similar to render() method of Mounting Phase.
+   
+  ? 4.  getSnapShotBeforeUpdate():
+            It will keep a track of state variables.
+            It have to return a state/ null.
+            It will work along with componnentDidUpdate() method.
+            The returned value of getSnapShotBeforeUpdate() is passed to componnentDidUpdate() as snapshot.
+  ? 5.  componentDidUpdate():
+            It will run after the getSnapShotBeforeUpdate() method.
+            It will get props , states and snapshot as parameters.
+            It is the best place to do side effects. like PUT/PATCH requests.
+
+*/
+
+const { Component } = require("react");
+
+class App extends Component{
+
+    constructor(props){
+        console.log(props);
+        console.log("I am constructor() method");
+        super(props);
+        this.state={counter:0};
+    }
+ 
+   static  getDerivedStateFromProps(props,prevState){
+    console.log("I am in getDerived state");
+    return null
+
+    }
+    shouldComponentUpdate(){
+        console.log("i am from shouldComponentUpdate() method");
+        return true;
+    }
+
     componentDidMount(){
         console.log("I am componentDidMount()");
+        
     }
 
     render(){
