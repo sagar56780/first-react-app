@@ -1,4 +1,4 @@
-// import React from "react";
+/* import React from "react";
 
 
 
@@ -76,9 +76,9 @@ const App=()=>{    //sending props - props is addition property passing to a ele
 }
 export default App;
 
-*/
+
 //!============Props- Destructuring===============
-/*
+
 import ChildCompnent from "./ChildComponent";
 const App=()=>{    //sending props - props is addition property passing to a element like we pass values inside input tag in html
    
@@ -95,8 +95,7 @@ const App=()=>{    //sending props - props is addition property passing to a ele
     );
 }
 export default App;
-*/
-/*
+
 import ChildCompnent from "./ChildComponent";
 const App=()=>{    //sending props - props is addition property passing to a element like we pass values inside input tag in html
    console.log(ChildCompnent);
@@ -112,10 +111,10 @@ const App=()=>{    //sending props - props is addition property passing to a ele
     );
 }
 export default App;
-*/
+
 
 //!========props drilling========
-/*
+
 import ChildCompnent from "./ChildComponent";
 
 const App=()=>{
@@ -131,11 +130,11 @@ const App=()=>{
     )
 }
 export default App;
-*/
+
 
 
 //!=================status hooks==========
-/*
+
 //?example 1
 import { useState } from "react";
 
@@ -154,7 +153,7 @@ const App=()=>
 
 }
 export default App;
-*/
+
 // //?example 2
 // import { useState } from "react";
 
@@ -195,8 +194,7 @@ const App=()=>
 
 }
 export default App;
-*/
-/*
+
 import { useState } from "react";
 
 const App=()=>
@@ -224,8 +222,6 @@ const App=()=>
 }
 export default App;
 
-*/
-/*
 //!=================task for the day=========
 import { useState } from "react"; 
 
@@ -275,9 +271,9 @@ const App=(()=>{
 })
 
 export default App;
-*/
+
 //!==================task 2============
-/*
+
 import { useState } from "react";
 
 const App=()=>
@@ -299,8 +295,7 @@ const App=()=>
 }
 export default App;
 
-*/
-/*
+
 //!==============task 3=================
  import React,{useState} from "react"
 const App=()=>{
@@ -384,10 +379,10 @@ const App=()=>{
     </>
 }
 export default App;
-*/
+
 //!============conditional Render ===========
 //? Example 1 by using  if else 
-/*
+
 import { useState } from "react";
 
 const App=()=>{
@@ -414,8 +409,7 @@ const App=()=>{
 
 }
 export default App;
-*/
-/*
+
 //?Exapmle 2 using ternery Operater
 import { useState } from "react";
 
@@ -435,9 +429,9 @@ const App=()=>{
 
 }
 export default App;
-*/
+
 //!===========useRef===========
-/*
+
 
 const App=()=>{
     let nameRef=useRef();
@@ -528,9 +522,9 @@ const App=()=>{
 }
 
 export default App;
-*/
+
 //!=================Controlled Forms=================
-/*
+
 
 const App=()=>{
 
@@ -595,10 +589,9 @@ const App=()=>{
 
 }
 export default App;
-*/
+
 
 //? Example 2
-/*
 
 const App=()=>{
 
@@ -644,10 +637,10 @@ const App=()=>{
 }
 export default App;
 
-*/
+
 //!================= life Cycle Methods================
 //? ===========class based Component=======
-/*
+
 import React,{Component} from "react";
 class App extends Component{
     state={counter:0};
@@ -673,9 +666,9 @@ class App extends Component{
     }
 }
 export default App;
-*/
+
 //! ============Mounting phase ========
-/*
+
  It is a process of creating an instance of component and rendering into the dom is called Mounting Phase.
  Mounting phase method are:
         ? 1. constructor():
@@ -779,7 +772,9 @@ export default App;
             It will get props , states and snapshot as parameters.
             It is the best place to do side effects. like PUT/PATCH requests.
 
-*/
+
+
+
 
 const { Component } = require("react");
 
@@ -825,5 +820,41 @@ class App extends Component{
 
     }
 
+}
+export default App;
+*/
+
+//!==========useEffect() Hook===========
+
+import React,{useState,useEffect} from "react";
+
+
+const App=()=>{
+    let[counter1, setCounter1]=useState(0);
+    let[counter2,setCounter2]=useState(10);
+    let[isdisplay,setDisplay]=useState(true);
+    let handleCounter1=()=>{
+        setCounter1(counter1+1);
+
+    }
+    let handleCounter2=()=>{
+        setCounter2(counter2+1);
+    }
+    let Changedisplay=()=>{
+        setDisplay(!isdisplay);
+    }
+
+    return(<>
+        <h1>counter1: {counter1}</h1>
+        <h2>Counter2: {counter2}</h2>
+        <button onClick={handleCounter1}>Change Counter 1</button>
+        <button onClick={handleCounter2}>Change Counter 2</button>
+
+        {isdisplay?<h1>I am displaying</h1>:null}
+        <button onClick={Changedisplay}>Change Display</button>
+
+
+        
+    </>)
 }
 export default App;
