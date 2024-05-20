@@ -828,12 +828,12 @@ export default App;
 //!==========useEffect() Hook===========
 
 import React,{useState,useEffect} from "react";
-
+import ChildCompnent from "./ChildComponent";
 
 const App=()=>{
     let[counter1, setCounter1]=useState(0);
     let[counter2,setCounter2]=useState(10);
-    let[isdisplay,setDisplay]=useState(true);
+    let[display,setDisplay]=useState(true);
     let handleCounter1=()=>{
         setCounter1(counter1+1);
 
@@ -842,8 +842,13 @@ const App=()=>{
         setCounter2(counter2+1);
     }
     let Changedisplay=()=>{
-        setDisplay(!isdisplay);
+        setDisplay(!display);
     }
+    useEffect(()=>{
+        console.log("I am mounting phase");
+       
+
+    },[counter1])
 
     return(<>
         <h1>counter1: {counter1}</h1>
@@ -851,7 +856,7 @@ const App=()=>{
         <button onClick={handleCounter1}>Change Counter 1</button>
         <button onClick={handleCounter2}>Change Counter 2</button>
 
-        {isdisplay?<h1>I am displaying</h1>:null}
+        {display?<ChildCompnent></ChildCompnent>:null}
         <button onClick={Changedisplay}>Change Display</button>
 
 

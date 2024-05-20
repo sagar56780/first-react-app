@@ -18,9 +18,7 @@ const ChildCompnent=(props)=>{
     );
 }
 export default ChildCompnent;
-*/
 
-/*
 const ChildCompnent=(props)=>{
 
     return (
@@ -34,8 +32,7 @@ const ChildCompnent=(props)=>{
     );
 }
 export default ChildCompnent;
-*/
-/*
+
 //!===========props Distructuring===========
 
 const ChildCompnent=(props)=>{
@@ -57,10 +54,10 @@ const ChildCompnent=(props)=>{
        );
    }
    export default ChildCompnent;
-*/
+
 
 //!========Default props=========
-/*
+
 const ChildCompnent=(props)=>{
     let{name="no name",age=18,course="JFS",gender="others"}=props;//setting default value for missing v
     return(
@@ -74,10 +71,10 @@ const ChildCompnent=(props)=>{
     );
 };
 export default ChildCompnent;
-*/
+
 
 //!=========props Drilling===========
-/*
+
 import GrandChildComponent from "./GrandChildComponent";
 const ChildCompnent=(props)=>{
    console.log("i am child component");
@@ -94,7 +91,7 @@ const ChildCompnent=(props)=>{
     );
 };
 export default ChildCompnent;
-*/
+
 
 //!========props type=========
 // import PropType from "prop-types"
@@ -116,3 +113,27 @@ export default ChildCompnent;
 //     }
    
 // }
+
+*/
+/* 
+        //!=======useEffect=======
+
+
+
+*/
+import React,{useEffect} from "react"
+const ChildCompnent=()=>{
+    useEffect(()=>{
+        console.log("i am mounting  phase from child component");
+        return()=>{
+            console.log("i am child component unmounting phase");
+
+        }
+
+    },[])
+
+    return <h1>Hi A am child compnent</h1>
+
+
+}
+export default ChildCompnent;
