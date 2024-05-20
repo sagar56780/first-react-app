@@ -807,6 +807,7 @@ class App extends Component{
         return(<>
          <h1>
             I am in class based component
+            I am in render metho
          </h1>
          <h1>{this.state.counter}</h1>
          <button onClick={()=>{
