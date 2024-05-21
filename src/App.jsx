@@ -919,7 +919,7 @@ export default App
     2. ReactDom.createPortal(conten, container)
         content=> string/jsx/component
         container=>It is the targeted element
-*/
+
 
 //? case 1
 import React, { useState } from 'react';
@@ -962,6 +962,53 @@ const App = () => {
         <button onClick={handelOpen2}>Open</button>
         {isOpen2?ReacDom.createPortal(<h1>I am from with portal <button onClick={handelClose2}>Close</button></h1>,document.getElementById("portal")):null}
      </section>
+     
+     
+
+    
+    </>
+  )
+}
+*/
+//? case 2
+import React, { useState } from 'react';
+import {Portal} from "./Portal";
+
+
+
+const App = () => {
+
+    let [isOpen1,setOpen1]=useState(false);
+    let [isOpen2,setOpen2]=useState(false);
+
+
+    let handelOpen1=()=>{
+        setOpen1(true);
+    }
+    let handelOpen2=()=>{
+        setOpen2(true);
+    }
+    let handelClose1=()=>{
+        setOpen1(false);
+    }
+    let handelClose2=()=>{
+        setOpen2(false);
+    }
+
+
+    
+
+
+  return (
+    <>
+     <section>
+        I will open without Portal 
+        <button onClick={handelOpen1}>Open</button>
+        {isOpen1?<h1>I am from without protal <button onClick={handelClose1}>Close</button></h1>:null}
+     </section>
+
+      <Portal handelOpen2={handelOpen2} isOpen2={isOpen2} handelClose2={handelClose2}></Portal>
+    
      
      
 
