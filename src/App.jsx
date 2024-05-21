@@ -869,7 +869,7 @@ export default App;
 //!=============axios============
 // step 1 install axios: npm install axios
 // step 2 import axios from "axios"
-
+/*
 
 import axios from 'axios'
 import React,{useEffect, useState} from 'react'
@@ -908,6 +908,65 @@ const App = () => {
 
     </>
      
+  )
+}
+
+export default App
+*/
+/*
+//!=========Portals==========
+    1. create a div tag in html with id protal.
+    2. ReactDom.createPortal(conten, container)
+        content=> string/jsx/component
+        container=>It is the targeted element
+*/
+
+//? case 1
+import React, { useState } from 'react';
+import ReacDom from "react-dom";
+
+
+
+const App = () => {
+
+    let [isOpen1,setOpen1]=useState(false);
+    let [isOpen2,setOpen2]=useState(false);
+
+
+    let handelOpen1=()=>{
+        setOpen1(true);
+    }
+    let handelOpen2=()=>{
+        setOpen2(true);
+    }
+    let handelClose1=()=>{
+        setOpen1(false);
+    }
+    let handelClose2=()=>{
+        setOpen2(false);
+    }
+
+
+    
+
+
+  return (
+    <>
+     <section>
+        I will open without Portal 
+        <button onClick={handelOpen1}>Open</button>
+        {isOpen1?<h1>I am from without protal <button onClick={handelClose1}>Close</button></h1>:null}
+     </section>
+     <section>
+        I will open with Portal 
+        <button onClick={handelOpen2}>Open</button>
+        {isOpen2?ReacDom.createPortal(<h1>I am from with portal <button onClick={handelClose2}>Close</button></h1>,document.getElementById("portal")):null}
+     </section>
+     
+     
+
+    
+    </>
   )
 }
 
