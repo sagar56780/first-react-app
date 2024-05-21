@@ -826,7 +826,7 @@ export default App;
 */
 
 //!==========useEffect() Hook===========
-
+/*
 import React,{useState,useEffect} from "react";
 import ChildCompnent from "./ChildComponent";
 
@@ -851,7 +851,7 @@ const App=()=>{
     },[counter1])
 
     return(<>
-        <h1>counter1: {counter1}</h1>
+        <h1>countr1: {counter1}</h1>
         <h2>Counter2: {counter2}</h2>
         <button onClick={handleCounter1}>Change Counter 1</button>
         <button onClick={handleCounter2}>Change Counter 2</button>
@@ -864,3 +864,51 @@ const App=()=>{
     </>)
 }
 export default App;
+*/
+
+//!=============axios============
+// step 1 install axios: npm install axios
+// step 2 import axios from "axios"
+
+
+import axios from 'axios'
+import React,{useEffect, useState} from 'react'
+
+const App = () => {
+
+    let [data,setData]=useState([]);
+    useEffect(()=>{
+
+        let getData=async ()=>{
+            let {data}=await axios.get("https://fakestoreapi.com/products")
+            console.log(data);
+            setData(data);
+        }
+        getData();
+
+
+    },[])
+
+
+  return (
+    <>
+        {data.map((val,ind)=>{
+            console.log(val);
+            <br />
+            
+            return (<React.Fragment key={ind}>
+             <h1 >{val.title}</h1>
+             <br /><br />
+                  </React.Fragment> )
+
+        
+        })}
+
+
+
+    </>
+     
+  )
+}
+
+export default App
