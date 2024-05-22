@@ -826,50 +826,12 @@ export default App;
 */
 
 //!==========useEffect() Hook===========
-/*
-import React,{useState,useEffect} from "react";
-import ChildCompnent from "./ChildComponent";
 
-const App=()=>{
-    let[counter1, setCounter1]=useState(0);
-    let[counter2,setCounter2]=useState(10);
-    let[display,setDisplay]=useState(true);
-    let handleCounter1=()=>{
-        setCounter1(counter1+1);
-
-    }
-    let handleCounter2=()=>{
-        setCounter2(counter2+1);
-    }
-    let Changedisplay=()=>{
-        setDisplay(!display);
-    }
-    useEffect(()=>{
-        console.log("I am mounting phase");
-       
-
-    },[counter1])
-
-    return(<>
-        <h1>countr1: {counter1}</h1>
-        <h2>Counter2: {counter2}</h2>
-        <button onClick={handleCounter1}>Change Counter 1</button>
-        <button onClick={handleCounter2}>Change Counter 2</button>
-
-        {display?<ChildCompnent></ChildCompnent>:null}
-        <button onClick={Changedisplay}>Change Display</button>
-
-
-        
-    </>)
-}
-export default App;
-*/
 
 //!=============axios============
 // step 1 install axios: npm install axios
 // step 2 import axios from "axios"
-
+/*
 
 import axios from 'axios'
 import React,{useEffect, useState} from 'react'
@@ -912,3 +874,64 @@ const App = () => {
 }
 
 export default App
+*/
+
+//!============Portal===========
+//? case 1 
+/*
+import React, { useState } from 'react'
+import ReactDom from 'react-dom'
+
+const App = () => {
+    let [isdiplay,setDisplay]=useState(false)
+    let [isdiplay2,setDisplay2]=useState(false)
+  return (
+    <>
+    <section style={{border:"solid"}}>
+        <h1>without portal</h1>
+        <button onClick={()=>{
+            setDisplay(true)
+        }}>Open</button>
+        {isdiplay?<h1>I am from without display<button onClick={()=>{
+            setDisplay(false);
+        }}>Close</button></h1>:null}
+        
+    </section>
+    <section style={{border:"solid"}}>
+        <h1>With portal</h1>
+        <button onClick={()=>{
+            setDisplay2(true)
+        }}>Open</button>
+
+        {isdiplay2?ReactDom.createPortal(<h1>I am from with display<button onClick={()=>{
+            setDisplay2(false)
+        }}>Close</button></h1>,document.getElementById("portal")):null}
+
+    </section>
+
+    </>
+    
+  )
+}
+
+export default App
+*/
+
+//!==============Pure Components ========
+
+
+
+import React from 'react'
+import PureParent from './PureParent'
+
+const App = () => {
+  return (
+    <>
+    <PureParent></PureParent>
+    </>
+  )
+}
+
+export default App
+
+
