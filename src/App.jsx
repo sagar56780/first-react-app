@@ -972,6 +972,7 @@ const App = () => {
   )
 }
 */
+/*
 //? case 2
 import React, { useState } from 'react';
 import {Portal} from "./Portal";
@@ -1020,3 +1021,19 @@ const App = () => {
 }
 
 export default App
+*/
+//!=========Pure Component==========
+
+import React from 'react'
+import PureParent from './PureParent'
+
+const App = () => {
+  return (
+    <>
+    <PureParent></PureParent>
+    </>
+  )
+}
+
+export default App;
+
