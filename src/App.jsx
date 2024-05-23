@@ -875,63 +875,108 @@ const App = () => {
 
 export default App
 */
-
-//!============Portal===========
-//? case 1 
 /*
-import React, { useState } from 'react'
-import ReactDom from 'react-dom'
+//!=========Portals==========
+    1. create a div tag in html with id protal.
+    2. ReactDom.createPortal(conten, container)
+        content=> string/jsx/component
+        container=>It is the targeted element
+
+
+//? case 1
+import React, { useState } from 'react';
+import ReacDom from "react-dom";
+
+
 
 const App = () => {
-    let [isdiplay,setDisplay]=useState(false)
-    let [isdiplay2,setDisplay2]=useState(false)
-  return (
-    <>
-    <section style={{border:"solid"}}>
-        <h1>without portal</h1>
-        <button onClick={()=>{
-            setDisplay(true)
-        }}>Open</button>
-        {isdiplay?<h1>I am from without display<button onClick={()=>{
-            setDisplay(false);
-        }}>Close</button></h1>:null}
-        
-    </section>
-    <section style={{border:"solid"}}>
-        <h1>With portal</h1>
-        <button onClick={()=>{
-            setDisplay2(true)
-        }}>Open</button>
 
-        {isdiplay2?ReactDom.createPortal(<h1>I am from with display<button onClick={()=>{
-            setDisplay2(false)
-        }}>Close</button></h1>,document.getElementById("portal")):null}
+    let [isOpen1,setOpen1]=useState(false);
+    let [isOpen2,setOpen2]=useState(false);
 
-    </section>
 
-    </>
+    let handelOpen1=()=>{
+        setOpen1(true);
+    }
+    let handelOpen2=()=>{
+        setOpen2(true);
+    }
+    let handelClose1=()=>{
+        setOpen1(false);
+    }
+    let handelClose2=()=>{
+        setOpen2(false);
+    }
+
+
     
-  )
-}
-
-export default App
-*/
-
-//!==============Pure Components ========
 
 
-
-import React from 'react'
-import PureParent from './PureParent'
-
-const App = () => {
   return (
     <>
-    <PureParent></PureParent>
+     <section>
+        I will open without Portal 
+        <button onClick={handelOpen1}>Open</button>
+        {isOpen1?<h1>I am from without protal <button onClick={handelClose1}>Close</button></h1>:null}
+     </section>
+     <section>
+        I will open with Portal 
+        <button onClick={handelOpen2}>Open</button>
+        {isOpen2?ReacDom.createPortal(<h1>I am from with portal <button onClick={handelClose2}>Close</button></h1>,document.getElementById("portal")):null}
+     </section>
+     
+     
+
+    
+    </>
+  )
+}
+*/
+//? case 2
+import React, { useState } from 'react';
+import {Portal} from "./Portal";
+
+
+
+const App = () => {
+
+    let [isOpen1,setOpen1]=useState(false);
+    let [isOpen2,setOpen2]=useState(false);
+
+
+    let handelOpen1=()=>{
+        setOpen1(true);
+    }
+    let handelOpen2=()=>{
+        setOpen2(true);
+    }
+    let handelClose1=()=>{
+        setOpen1(false);
+    }
+    let handelClose2=()=>{
+        setOpen2(false);
+    }
+
+
+    
+
+
+  return (
+    <>
+     <section>
+        I will open without Portal 
+        <button onClick={handelOpen1}>Open</button>
+        {isOpen1?<h1>I am from without protal <button onClick={handelClose1}>Close</button></h1>:null}
+     </section>
+
+      <Portal handelOpen2={handelOpen2} isOpen2={isOpen2} handelClose2={handelClose2}></Portal>
+    
+     
+     
+
+    
     </>
   )
 }
 
 export default App
-
-
