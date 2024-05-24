@@ -1023,7 +1023,7 @@ const App = () => {
 export default App
 */
 //!=========Pure Component==========
-
+/*
 import React from 'react'
 import PureParent from './PureParent'
 
@@ -1036,4 +1036,39 @@ const App = () => {
 }
 
 export default App;
+*/
+
+//!============useCallback() Hook====
+
+import React, { useCallback, useState } from 'react'
+import Title from './Title';
+import CounterComponent from './CounterComponent';
+import ButtonComponent from './ButtonComponent';
+
+const App = () => {
+let [age,setAge]=useState(20);
+let [salary,setSalary]=useState(50000);
+let handleAge=()=>{
+    setAge(age+1);
+}
+let handleSalary=()=>{
+    setSalary(salary+1);
+}
+  return (
+     <> 
+     <Title>Title</Title>
+     <CounterComponent data={age}>AGE</CounterComponent>
+     <ButtonComponent fn={handleAge}>Update Age</ButtonComponent>
+
+     <CounterComponent data={salary}>Salary</CounterComponent>
+     <ButtonComponent fn={handleSalary}>Update Salary</ButtonComponent>
+
+     
+     </>
+  )
+}
+
+export default App
+
+
 
