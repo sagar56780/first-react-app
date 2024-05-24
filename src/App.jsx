@@ -1039,7 +1039,7 @@ export default App;
 */
 
 //!============useCallback() Hook====
-
+/*
 import React, { useCallback, useState } from 'react'
 import Title from './Title';
 import CounterComponent from './CounterComponent';
@@ -1070,5 +1070,43 @@ let handleSalary=()=>{
 
 export default App
 
+*/
+//!============useMemo() Hook =========
 
+
+import React from 'react'
+import { useState,useMemo } from 'react'
+
+const App = () => {
+    let [counter1,setCounter1]=useState(0)
+    let [counter2,setCounter2]=useState(0)
+
+    let handleCounter1=()=>{
+        setCounter1(counter1+1)
+    }
+
+    let handleCounter2=()=>{
+        setCounter2(counter2+1)
+    }
+
+    let isEven=useMemo(()=>{
+        console.log("is Even working");
+        let num=0;
+        for(let i=0;i<=800000000;i++){
+            num+=i;
+        }
+        return counter1 % 2 === 0;
+    },[counter1])
+  return (
+     <center>
+        <button onClick={handleCounter1}><h1>{counter1}</h1> </button>
+        <h1>{isEven?"Even":"odd"} </h1>
+        <button onClick={handleCounter2}><h1>{counter2}</h1></button>
+
+
+     </center>
+  )
+}
+
+export default App
 
