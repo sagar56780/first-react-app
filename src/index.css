@@ -1,5 +1,5 @@
 /* Caluculator task*/
-.calculator{
+/* .calculator{
 
 
     height: 200px;
@@ -8,4 +8,33 @@
 button{
     height: 50px;
     width: 50px;
+} */
+/*//!==========css for Nav component
+*/
+nav{
+    display: flex;
+    flex-grow: 1;
+    height: 3em;
+    width: 100vw;
+    background: grey;
+
+
+
+}
+div{
+ 
+    
+}
+.nav-item{
+    text-decoration: none;
+    flex-grow: 1;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-item:hover{
+    background: pink;
+    
 }

@@ -1072,7 +1072,7 @@ export default App
 
 */
 //!============useMemo() Hook =========
-
+/*
 
 import React from 'react'
 import { useState,useMemo } from 'react'
@@ -1110,3 +1110,42 @@ const App = () => {
 
 export default App
 
+*/
+
+//!=============React- Router -Dom (version ) =============
+
+import React from 'react'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Home from './componentPages/Home'
+import About from './componentPages/About'
+import Login from './componentPages/Login'
+import Contact from './componentPages/Contact'
+
+const App = () => {
+  return (
+    <>
+     
+    <BrowserRouter>
+     {/* Logic */}
+     <Routes>
+        <Route path='/home'  element={<Home/>}/>
+        <Route path='/about'  element={<About/>}/>
+
+        <Route path='/login'  element={<Login/>}/>
+
+        <Route path='/contact'  element={<Contact/>}/>
+
+
+     </Routes>
+
+
+     {/* Logic */}
+    
+    
+    </BrowserRouter>
+    
+</>
+  )
+}
+
+export default App
