@@ -3,8 +3,8 @@ import Nav from './Nav'
 const Login = () => {
   return (
     <>
-    <div>Login</div>
-     <Nav></Nav>
+    <div className='login'>Login</div>
+     <Nav ></Nav>
     </>
 
   )

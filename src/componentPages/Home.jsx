@@ -4,7 +4,7 @@ const Home = () => {
     console.log("home ");
   return (
     <>
-    <div>Home</div>
+    <div className='home'>Home</div>
     
     <Nav></Nav>
     

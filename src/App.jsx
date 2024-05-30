@@ -1120,13 +1120,15 @@ import Home from './componentPages/Home'
 import About from './componentPages/About'
 import Login from './componentPages/Login'
 import Contact from './componentPages/Contact'
+import Nav from './componentPages/Nav'
 
 const App = () => {
   return (
     <>
      
     <BrowserRouter>
-     {/* Logic */}
+
+
      <Routes>
         <Route path='/home'  element={<Home/>}/>
         <Route path='/about'  element={<About/>}/>
@@ -1139,13 +1141,33 @@ const App = () => {
      </Routes>
 
 
-     {/* Logic */}
+    
     
     
     </BrowserRouter>
     
 </>
+
   )
 }
 
-export default App
+ export default App
+
+
+// import React from 'react'
+// import navabar from "./navbar.module.css"
+// const App = () => {
+//   return (
+//     <div className={navabar.mainConter}>
+        
+
+
+
+
+
+
+//     </div>
+//   )
+// }
+
+// export default App

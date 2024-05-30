@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.nav{
+    border: solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+    height: 3em;
+    width: 100vw;
+}
+
+.navdiv{
+    display: flex;
+    flex-grow: 1;
+    column-gap: 1em;
+
+}
+.navItems{
+    height: 100%;
+    flex-grow: 1;
+    font-size: 1em;
+    font-weight: 700;
+    background: grey;
+
+
+}
+
+.navItems:hover{
+    background: black;
+    color: bisque;
+}
+.container{
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    
+}
+

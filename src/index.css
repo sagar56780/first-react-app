@@ -35,3 +35,31 @@ nav{
     background: pink;
     
 }
+.about{
+    background: yellow;
+    height: 50vh;
+    width: 100vw;
+
+}
+.home{
+    background: rgb(62, 145, 45);
+    height: 50vh;
+    width: 100vw;
+
+}
+.login{
+  background: rgb(35, 248, 255);
+    height: 50vh;
+    width: 100vw;
+
+}
+.contact{
+    background: rgb(26, 54, 138);
+    height: 50vh;
+    width: 100vw;
+
+
+}
+.active{
+    background: rgb(213, 213, 204);
+}

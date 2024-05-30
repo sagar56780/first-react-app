@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from './Nav'
 const About = () => {
   return (<>
-    <div>About</div>
+    <div className='about'>About</div>
      <Nav></Nav>
     </>
   )
