@@ -1113,7 +1113,7 @@ export default App
 */
 
 //!=============React- Router -Dom (version ) =============
-
+/*
 import React from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Home from './componentPages/Home'
@@ -1153,21 +1153,45 @@ const App = () => {
 
  export default App
 
+*/
+//! Nested Routing using version 5 
 
-// import React from 'react'
-// import navabar from "./navbar.module.css"
-// const App = () => {
-//   return (
-//     <div className={navabar.mainConter}>
-        
+import React from 'react'
+import { BrowserRouter,Routes, Route } from 'react-router-dom'
+import About from './componentPages/About'
+import Home from './componentPages/Home'
+import Layout from './componentPages/Layout'
+import Company from './componentPages/aboutChildComponent/Company'
+import Employee from './componentPages/aboutChildComponent/Employee'
+import User from './componentPages/aboutChildComponent/User'
+import Contact from './componentPages/Contact'
+import RegEmployee from './componentPages/aboutChildComponent/empChildComponent/RegEmployee'
+import ErrorPage from './componentPages/ErrorPage'
+import Login from './componentPages/Login'
 
+const App = () => {
+   return(<>
+   <BrowserRouter>
+   <Routes>
+        <Route path='/' element={<Layout/>}>
+            <Route path='home'element={<Home/>}/>
+            <Route path='about'element={<About/>}>
+                <Route path='company' element={<Company/>}/>
+                <Route path='employee' element={<Employee/>}>
+                    <Route path='contactEmployee' element={<Contact/>}/>
+                    <Route path='regEmployee' element={<RegEmployee/>}/> 
+               </Route>
+                <Route path='user' element={<User/>}/>
+            </Route>
+            <Route path='contact' element={<Contact/>} />
+            <Route path='login' element={<Login/>} />  
+            <Route path='*' element={<ErrorPage/>} />
+        </Route>
 
+   </Routes>
+   </BrowserRouter>
+   </>)
+}
 
+export default App
 
-
-
-//     </div>
-//   )
-// }
-
-// export default App
