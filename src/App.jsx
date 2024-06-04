@@ -1155,6 +1155,7 @@ const App = () => {
 
 */
 //! Nested Routing using version 5 
+/*
 
 import React from 'react'
 import { BrowserRouter,Routes, Route } from 'react-router-dom'
@@ -1191,6 +1192,81 @@ const App = () => {
    </Routes>
    </BrowserRouter>
    </>)
+}
+
+export default App
+
+*/
+//!==========Ex-2 using version 6==========
+import React from 'react'
+import { RouterProvider,createBrowserRouter } from 'react-router-dom'
+import About from './componentPages/About'
+import Home from './componentPages/Home'
+import Layout from './componentPages/Layout'
+import Company from './componentPages/aboutChildComponent/Company'
+import Employee from './componentPages/aboutChildComponent/Employee'
+import User from './componentPages/aboutChildComponent/User'
+import Contact from './componentPages/Contact'
+import RegEmployee from './componentPages/aboutChildComponent/empChildComponent/RegEmployee'
+import ErrorPage from './componentPages/ErrorPage'
+import Login from './componentPages/Login'
+
+const App = () => {
+ let  router=createBrowserRouter([
+    {
+        path:'/',
+        element:<Layout/>,
+        children:[
+            {
+                path:"home",
+                element:<Home/>
+            },
+            {
+                path:"about",
+                element:<About/>,
+                children: [
+                    {
+                        path:"company",
+                        element:<Company/>
+
+                    },
+                    {
+                        path:"employee",
+                        element:<Employee/>
+
+                    },
+                    {
+                        path:"users",
+                        element:<User/>
+
+                    }
+                ]
+
+            },
+            {
+                path:"contact",
+                element:<Contact/>
+            },
+            {
+                path:"login",
+                element:<Login/>
+            },
+            {
+                path:"*",
+                element:<ErrorPage/>
+            }
+            
+        
+        ]
+    }
+ ])
+
+  return (
+    <>  <RouterProvider router={router}></RouterProvider>
+    {/*routerProvider  will not accept any child componnet*/}
+    </>
+   
+  )
 }
 
 export default App
