@@ -1197,6 +1197,7 @@ const App = () => {
 export default App
 
 */
+/*
 //!==========Ex-2 using version 6==========
 import React from 'react'
 import { RouterProvider,createBrowserRouter } from 'react-router-dom'
@@ -1263,7 +1264,7 @@ const App = () => {
 
   return (
     <>  <RouterProvider router={router}></RouterProvider>
-    {/*routerProvider  will not accept any child componnet*/}
+    routerProvider  will not accept any child componnet
     </>
    
   )
@@ -1271,3 +1272,47 @@ const App = () => {
 
 export default App
 
+*/
+//!================Navigation hook==========
+import React from 'react'
+import HomePage from './navigatorPages/HomePage'
+import ContactPage from './navigatorPages/ContactPage'
+import DashboradPage from './navigatorPages/DashboradPage'
+import AboutPage from './navigatorPages/AboutPage'
+import { BrowserRouter, RouterProvider, createBrowserRouter } from 'react-router-dom'
+
+const App = () => {
+    let router=createBrowserRouter([
+        {
+            path:"/",
+            element:<DashboradPage/>,
+            children:[
+                {
+                    path:"home",
+                    element: <HomePage/>
+                },
+                {
+                    path:"about",
+                    element:<AboutPage/>
+        
+                },
+                {
+                    path:"contact",
+                    element:<ContactPage/>
+        
+                }
+
+            ]
+        },
+       
+
+    ])
+  return (
+    <>
+    <RouterProvider router={router}></RouterProvider>
+    </>
+     
+  )
+}
+
+export default App
